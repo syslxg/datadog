@@ -4,9 +4,9 @@
 
 This AMI runs a nginx, proxies HTTP request to a static website enabled S3 bucket. The url of the S3 bucket is passed from User Data when instances are launched
 
-### Steps
+### Steps for building the AMI
 
-Clone a Amazon public AMI. ` ami-vpc-nat-1.1.0-beta.x86-64-ebs (ami-f619c29f)` is used as of now.
+Launch a EC2 instance by cloning a Amazon public AMI. ` ami-vpc-nat-1.1.0-beta.x86-64-ebs (ami-f619c29f)` is used as of now.
 
 Login as `ec2-user`
 
@@ -36,6 +36,7 @@ Create a shell script `/var/lib/cloud/data/scripts/nginx_conf`, with the followi
 	sed -i "s/blob.cfblob.com/$url/" /etc/nginx/nginx.conf
 	/etc/init.d/nginx restart && chkconfig nginx on
 
+Convert the instance to AMI.
     
 The latest ami as of now, is `ami-c983e0a0`, shared on AWS account `garyliu`.
 
