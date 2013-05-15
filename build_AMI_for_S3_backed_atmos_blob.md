@@ -23,7 +23,7 @@ Run
 
 	mkdir -p /var/lib/cloud/data/scripts
 
-Create a script file called nginx_conf, with the following content
+Create a shell script `/var/lib/cloud/data/scripts/nginx_conf`, with the following content:
 
 	#!/bin/bash
 	url=`curl -sL  http://169.254.169.254/latest/user-data | sed "s#http://##" | tr -d " " `
