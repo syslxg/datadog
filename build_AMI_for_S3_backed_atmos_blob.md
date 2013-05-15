@@ -1,5 +1,11 @@
 # Build AMI for S3 backed Atmos blob
 
+### Describtion
+
+This AMI runs a nginx, proxies HTTP request to a static website enabled S3 bucket. The url of the S3 bucket is passed from User Data when instances are launched
+
+### Steps
+
 Clone a Amazon public AMI. ` ami-vpc-nat-1.1.0-beta.x86-64-ebs (ami-f619c29f)` is used as of now.
 
 Login as `ec2-user`
