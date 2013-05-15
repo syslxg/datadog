@@ -26,7 +26,7 @@ Run
 Create a script file called nginx_conf, with the following content
 
 	#!/bin/bash
-	url=\`curl -sL  http://169.254.169.254/latest/user-data | sed "s#http://##" | tr -d " " \`
+	url=`curl -sL  http://169.254.169.254/latest/user-data | sed "s#http://##" | tr -d " " `
 	sed -i "s/blob.cfblob.com/$url/" /etc/nginx/nginx.conf
 	/etc/init.d/nginx restart && chkconfig nginx on
 
